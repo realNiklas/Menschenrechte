@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Projekt: Klare Stimme – offenes Ohr</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes textGlow { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes countUp { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        .theme-hero { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .theme-hero h1 { color: white; font-size: 2.5rem; margin-bottom: 1rem; animation: slideInUp 0.8s ease-out; }
+        .theme-hero p { color: rgba(255,255,255,0.9); font-size: 1.1rem; animation: slideInUp 0.8s ease-out 0.2s both; }
+        .content-section { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
+        .concept-card { background: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 4px solid #f5576c; animation: slideInUp 0.8s ease-out; }
+        .concept-card h3 { color: #f5576c; margin-bottom: 1rem; animation: textGlow 0.8s ease-out; }
+        .animated-text { animation: textGlow 0.8s ease-out 0.2s both; }
+
+        .media-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .media-item { background: white; border-radius: 12px; padding: 1.5rem; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease-out; transition: all 0.3s ease; }
+        .media-item:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .media-icon { font-size: 3rem; margin-bottom: 1rem; }
+
+        .example-box { background: #fff5f7; border-left: 4px solid #f5576c; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; animation: slideInUp 0.8s ease-out; }
+        .example-box h4 { color: #f5576c; margin-bottom: 0.5rem; animation: textGlow 0.6s ease-out; }
+
+        .dialogue-box { background: white; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease-out; }
+        .dialogue-item { margin: 1rem 0; padding: 1rem; border-radius: 8px; background: #f9fafb; border-left: 4px solid #f5576c; animation: textGlow 0.6s ease-out; }
+
+        .statistics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .stat-box { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; animation: slideInUp 0.8s ease-out; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; animation: countUp 2s ease-out forwards; }
+
+        .project-card { background: white; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #f5576c; animation: slideInUp 0.8s ease-out; }
+        .project-card h4 { color: #f5576c; margin-bottom: 1rem; animation: textGlow 0.6s ease-out; }
+
+        h2 { animation: textGlow 0.8s ease-out; }
+        
+        .quote-section { background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 3rem 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; font-size: 1.3rem; font-style: italic; animation: slideInUp 0.8s ease-out; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="theme-hero">
+        <div class="container">
+            <h1>🎤 Mein Projekt: Thema 3-2</h1>
+            <h2 style="color: rgba(255,255,255,0.95); font-size: 1.8rem; margin-bottom: 1rem;">Klare Stimme – offenes Ohr</h2>
+            <p>Wie ich durch Kreativität für Toleranz und Verständnis einstehe</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="content-section">
+            <div class="concept-card">
+                <h3>💡 Warum ich dieses Thema gewählt habe</h3>
+                <p class="animated-text">Ich lebe in einer Zeit, in der Hass und Intoleranz zunehmen – aber auch wo Kreativität transformativ wirken kann. Ich möchte zeigen, dass meine Stimme zählt. Nicht nur, wenn ich spreche, sondern auch wenn ich höre. Dieses Projekt ist mein Beitrag zu einer toleranteren Welt.</p>
+            </div>
+
+            <div class="concept-card">
+                <h3>🎯 Mein Ansatz</h3>
+                <p class="animated-text">Ich nutze kreative Medien, um Brücken zu bauen:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8; animation: slideInUp 0.8s ease-out 0.3s both;">
+                    <li>🎵 Musik, die Botschaften trägt</li>
+                    <li>🎬 Videos, die Perspektiven teilen</li>
+                    <li>🖼️ Kunstwerke, die Dialog schaffen</li>
+                    <li>✍️ Worte, die verbinden</li>
+                    <li>🎭 Performances, die Herzen öffnen</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🎨 Die Medienformen, die ich nutze</h2>
+            
+            <div class="media-grid">
+                <div class="media-item">
+                    <div class="media-icon">🎵</div>
+                    <h4>Musik</h4>
+                    <p>Ich nutze Musik, um Emotionen zu transportieren und Menschen zu vereinen.</p>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-icon">🎬</div>
+                    <h4>Video</h4>
+                    <p>Ich produziere Videos, die Geschichten von echten Menschen erzählen.</p>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-icon">🖼️</div>
+                    <h4>Kunstwerk</h4>
+                    <p>Ich schaffe visuelle Kunstwerke, die unterschiedliche Perspektiven darstellen.</p>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-icon">✍️</div>
+                    <h4>Worte</h4>
+                    <p>Ich schreibe Gedichte, Essays und Dialoge, die Verständnis fördern.</p>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-icon">🎭</div>
+                    <h4>Performance</h4>
+                    <p>Ich stelle auf die Bühne, was normalerweise verborgen bleibt.</p>
+                </div>
+
+                <div class="media-item">
+                    <div class="media-icon">🗣️</div>
+                    <h4>Dialog</h4>
+                    <p>Ich schaffe Raum für echte Gespräche zwischen verschiedenen Menschen.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="quote-section">
+                "Ich habe gelernt, dass meine Stimme nicht nur Worte sind – sie ist mein Kunstwerk, meine Musik, meine Botschaft."
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">— Aus meinem Projekttagebuch</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📌 Praktische Beispiele meiner Arbeit</h2>
+            
+            <div class="example-box">
+                <h4>🎵 Mein Musikprojekt: „Stimmen vereint"</h4>
+                <p class="animated-text"><strong>Was ich mache:</strong> Ich habe einen Song geschrieben, der Menschen verschiedener Kulturen und Religionen ehrt. Der Song verbindet traditionelle Melodien mit modernen Beats.</p>
+                <p class="animated-text"><strong>Die Botschaft:</strong> Musik übersetzt Grenzen.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎬 Mein Video-Projekt: „Mittagspause"</h4>
+                <p class="animated-text"><strong>Was ich mache:</strong> Ein 3-minütiges Video, das Menschen bei der Mittagspause zeigt – wie unterschiedlich ihre Geschichten sind, aber wie ähnlich ihre Träume.</p>
+                <p class="animated-text"><strong>Die Botschaft:</strong> Jede Person hat eine Geschichte zu erzählen.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🖼️ Mein Kunstprojekt: „Farben des Respekts"</h4>
+                <p class="animated-text"><strong>Was ich mache:</strong> Eine große Leinwand, auf der Zuschauer ihre Handprints in verschiedenen Farben hinterlassen. Symbolisiert: Viele Hände, eine Botschaft – Respekt und Toleranz.</p>
+                <p class="animated-text"><strong>Die Botschaft:</strong> Wir sind unterschiedlich, aber stark zusammen.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📊 Die Zahlen, warum ich handeln muss</h2>
+            
+            <div class="statistics">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="49">0</div>
+                    <div class="stat-label">% der Welt ohne Pressefreiheit</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="372">0</div>
+                    <div class="stat-label">Journalisten 2023 inhaftiert</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="1000">0</div>
+                    <div class="stat-label">Künstler pro Jahr verfolgt</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="81">0</div>
+                    <div class="stat-label">Länder mit Internetzensur</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🎯 Meine konkreten Projekte</h2>
+            
+            <div class="project-card">
+                <h4>🎵 Musikproduktion: Ein Song für Toleranz</h4>
+                <p><strong>Mein Plan:</strong> Ich schreibe, produziere und veröffentliche einen Song, der für Vielfalt und Toleranz wirbt. Der Song wird mehrsprachig sein.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>🎬 Dokumentation: "Stimmen hören"</h4>
+                <p><strong>Mein Plan:</strong> Ich sammle Interviews von Menschen, die durch Kreativität Veränderung bewirkt haben. Ein Dokumentarfilm über Kunstaktivisten.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📱 Social Media Kampagne</h4>
+                <p><strong>Mein Plan:</strong> Ich starte eine #MyVoiceMatters Kampagne, wo Menschen ihre kreative Antwort auf Intoleranz teilen.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>🎭 Live-Performance</h4>
+                <p><strong>Mein Plan:</strong> Ein Theater-Performance-Abend in meiner Schule, der unterschiedliche Perspektiven auf Meinungsfreiheit zeigt.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>✍️ Gedichtsammlung</h4>
+                <p><strong>Mein Plan:</strong> Ich schreibe und sammle Gedichte von verschiedenen Schülern über "Stimme" und "Toleranz". Veröffentlichung als kleines Buch.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; animation: slideInUp 0.8s ease-out 0.4s both;">
+                <h3 style="color: white; margin-bottom: 1rem;">🎤 Meine Botschaft</h3>
+                <p class="animated-text">Ich glaube an die Kraft der Kreativität. Meine Stimme ist nicht nur für mich – sie ist ein Werkzeug, um die Welt toleranter, empathischer und schöner zu machen. Und ich möchte, dass auch du deine Stimme nutzt.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über dieses Projekt</h3>
+                    <p>Mein persönliches Kunstprojekt für Toleranz und Verständnis.</p>
+                </div>
+                <div>
+                    <h3>Verwandte Themen</h3>
+                    <ul>
+                        <li><a href="theme-3-1.html">Thema 3-1</a></li>
+                        <li><a href="theme-3-3.html">Thema 3-3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ressourcen</h3>
+                    <ul>
+                        <li><a href="https://pen.org/" target="_blank">PEN America</a></li>
+                        <li><a href="https://www.amnesty.org/" target="_blank">Amnesty</a></li>
+                        <li><a href="https://www.freemuse.org/" target="_blank">Freemuse</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Mein Menschenrechte-Projekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 50);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString('de-DE');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString('de-DE');
+                }
+            }, 50);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                animateCounter(counter);
+            });
+        });
+    </script>
+</body>
+</html>

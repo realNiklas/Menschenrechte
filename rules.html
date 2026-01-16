@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spielregeln & Wettbewerbsthemen - Menschenrechte</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Animations */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Rules Page Specific Styles */
+        .rules-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .rules-hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .rules-hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+        }
+
+        .rules-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .rules-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .rule-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .rule-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-left-color: #764ba2;
+        }
+
+        .rule-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rule-card h3 {
+            color: #1f2937;
+            margin-bottom: 1rem;
+        }
+
+        .rule-card p {
+            color: #6b7280;
+            line-height: 1.7;
+        }
+
+        /* Themes Section */
+        .themes-section {
+            background: linear-gradient(to bottom, #f3f4f6, #ffffff);
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+
+        .themes-section h2 {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #111827;
+        }
+
+        .theme-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .theme-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .theme-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+        }
+
+        .theme-header {
+            padding: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .theme-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .theme-body {
+            padding: 2rem;
+        }
+
+        .theme-body p {
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .theme-bullet {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+            gap: 0.75rem;
+        }
+
+        .theme-bullet::before {
+            content: "▪";
+            color: #667eea;
+            font-weight: bold;
+            margin-top: 0.25rem;
+            flex-shrink: 0;
+        }
+
+        /* Requirements Section */
+        .requirements-section {
+            background: #f9fafb;
+            padding: 4rem 0;
+            margin-top: 3rem;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+            animation: slideInUp 0.8s ease-out 0.4s both;
+        }
+
+        .requirement-box {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            border-top: 4px solid #667eea;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        }
+
+        .requirement-box h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .requirement-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .requirement-box li {
+            padding-left: 1.5rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: #4b5563;
+            line-height: 1.6;
+        }
+
+        .requirement-box li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Info Banner */
+        .info-banner {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 3rem 0;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out 0.6s both;
+        }
+
+        .info-banner h3 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+
+        .info-banner p {
+            color: rgba(255,255,255,0.95);
+            margin: 0;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 2rem 0;
+            margin: 2rem 0;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #667eea, #764ba2);
+        }
+
+        .timeline-item {
+            margin-bottom: 2rem;
+            width: 48%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+            padding-right: 2rem;
+        }
+
+        .timeline-item:nth-child(even) {
+            margin-left: 52%;
+            padding-left: 2rem;
+        }
+
+        .timeline-content {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .timeline-content h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Stats Counter */
+        .stats-highlight {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+            animation: slideInUp 0.8s ease-out 0.8s both;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .rules-hero h1 {
+                font-size: 2rem;
+            }
+
+            .timeline::before {
+                left: 0;
+            }
+
+            .timeline-item {
+                width: 100%;
+                padding-left: 2rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+                margin-left: 0 !important;
+            }
+
+            .theme-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html" class="active">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="rules-hero">
+        <div class="container">
+            <h1>🎯 Wettbewerbs-Spielregeln</h1>
+            <p>Für Module der Klassen 8-10 • Gemeinsam für Menschenrechte</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Rules Section -->
+        <section class="rules-container">
+            <h2 style="text-align: center; color: #111827;">Allgemeine Spielregeln</h2>
+            
+            <div class="rules-grid">
+                <div class="rule-card">
+                    <div class="rule-icon">👥</div>
+                    <h3>Teilnahmeformen</h3>
+                    <p><strong>Allein oder in Gruppen:</strong> Alle Aufgaben können von einzelnen Schülerinnen und Schülern oder in Gruppen aus bis zu 4 Personen bearbeitet werden.</p>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-icon">⚖️</div>
+                    <h3>Geistiges Eigentum</h3>
+                    <p><strong>Respekt vor Urheberrechten:</strong> Urheberrechte Dritter dürfen nicht verletzt werden. Keine Kopien – eure eigenen Ideen zählen!</p>
+                </div>
+
+                <div class="rule-card">
+                    <div class="rule-icon">🤖</div>
+                    <h3>KI-Nutzung</h3>
+                    <p><strong>Transparenz:</strong> Falls eine KI bei der Erstellung der Arbeit genutzt wird, muss dies dokumentiert werden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Themes Section -->
+        <section class="themes-section">
+            <div class="rules-container">
+                <h2>🎓 Themen für Klasse 8-10 (Modul 3)</h2>
+                
+                <div class="theme-cards">
+                    <!-- Theme 3-1 -->
+                    <div class="theme-card" onclick="window.location.href='theme-3-1.html'" style="cursor: pointer;">
+                        <div class="theme-header">
+                            <div class="theme-number">3-1</div>
+                            <div class="theme-title">„Hier bin ich Mensch – hier darf ich's sein!"</div>
+                        </div>
+                        <div class="theme-body">
+                            <p><strong>Kernidee:</strong> Jeder Mensch ist einzigartig. Die Menschenrechte geben dir die Möglichkeit, dich selbst zu entfalten.</p>
+                            
+                            <p><strong>Aufgabe:</strong> Zeige, was unsere Freiheit in Europa ausmacht.</p>
+                            
+                            <div class="theme-bullet">
+                                <span>Explore deine persönlichen Freiheiten</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Vergleiche europäische mit globalen Perspektiven</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Zeige deine Individualität kreativ</span>
+                            </div>
+                            <p style="margin-top: 1rem; text-align: center;"><a href="theme-3-1.html" style="background: #667eea; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; display: inline-block;">Mehr erfahren →</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Theme 3-2 -->
+                    <div class="theme-card" onclick="window.location.href='theme-3-2.html'" style="cursor: pointer;">
+                        <div class="theme-header">
+                            <div class="theme-number">3-2</div>
+                            <div class="theme-title">Klare Stimme – offenes Ohr</div>
+                        </div>
+                        <div class="theme-body">
+                            <p><strong>Kernidee:</strong> In Europa ist Meinungsfreiheit ein hohes Gut.</p>
+                            
+                            <p><strong>Aufgabe:</strong> Wie können Kunst, Musik und Sprache dazu beitragen, Respekt und Toleranz für deine Meinung und die der anderen zu fördern?</p>
+                            
+                            <div class="theme-bullet">
+                                <span>Nutze kreative Medien zur Kommunikation</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Fördere Dialog und Verständnis</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Zeige die Kraft freier Meinungsäußerung</span>
+                            </div>
+                            <p style="margin-top: 1rem; text-align: center;"><a href="theme-3-2.html" style="background: #f5576c; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; display: inline-block;">Mehr erfahren →</a></p>
+                        </div>
+                    </div>
+
+                    <!-- Theme 3-3 -->
+                    <div class="theme-card" onclick="window.location.href='theme-3-3.html'" style="cursor: pointer;">
+                        <div class="theme-header">
+                            <div class="theme-number">3-3</div>
+                            <div class="theme-title">Gewalt ist keine Option!</div>
+                        </div>
+                        <div class="theme-body">
+                            <p><strong>Kernidee:</strong> Gewalt – körperlich oder seelisch – kann alle Menschen treffen.</p>
+                            
+                            <p><strong>Aufgabe:</strong> Was kannst du in deinem Umfeld dazu beitragen, dass es zu weniger Gewalt kommt?</p>
+                            
+                            <div class="theme-bullet">
+                                <span>Identifiziere Gewaltformen um dich herum</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Entwickle Lösungen für dein Umfeld</span>
+                            </div>
+                            <div class="theme-bullet">
+                                <span>Inspiriere andere zum gewaltfreien Handeln</span>
+                            </div>
+                            <p style="margin-top: 1rem; text-align: center;"><a href="theme-3-3.html" style="background: #dc2626; color: white; padding: 0.5rem 1rem; border-radius: 6px; text-decoration: none; display: inline-block;">Mehr erfahren →</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Points Banner -->
+        <section class="rules-container">
+            <div class="info-banner">
+                <h3>💡 Wichtige Erinnerung</h3>
+                <p>Die Themen können in beliebiger Art und Weise bearbeitet werden – sei kreativ! Texte, Bilder, Videos, Musik, Präsentationen oder eine Mischung aus allem ist möglich.</p>
+            </div>
+        </section>
+
+        <!-- Requirements Section -->
+        <section class="requirements-section">
+            <div class="rules-container">
+                <h2 style="text-align: center; margin-bottom: 2rem;">📋 Formale Anforderungen</h2>
+                
+                <div class="requirements-grid">
+                    <!-- Written Work -->
+                    <div class="requirement-box">
+                        <h4>📝 Schriftliche Arbeiten</h4>
+                        <ul>
+                            <li><strong>Max. Umfang:</strong> 10 Seiten (1,5-zeilig, 12pt)</li>
+                            <li>Deckblatt, Inhalts- und Literaturverzeichnis zählen nicht mit</li>
+                            <li>Beigefügte Dokumentationen (Statistiken, Bilder) zählen nicht mit</li>
+                            <li><strong>Format:</strong> Vorzugsweise PDF</li>
+                        </ul>
+                    </div>
+
+                    <!-- Artistic Work -->
+                    <div class="requirement-box">
+                        <h4>🎨 Bildnerische Arbeiten</h4>
+                        <ul>
+                            <li><strong>Max. Format:</strong> 42 × 60 cm (ca. DIN A2, inkl. Passepartout)</li>
+                            <li>Größere oder plastische Arbeiten als Foto mit Größen- und Technikangabe</li>
+                            <li>Postalische Einreichung zusätzlich zum Upload erforderlich</li>
+                            <li>Hochauflösende Fotos empfohlen</li>
+                        </ul>
+                    </div>
+
+                    <!-- Multimedia Work -->
+                    <div class="requirement-box">
+                        <h4>🎬 Multimediale Arbeiten</h4>
+                        <ul>
+                            <li><strong>Max. Dateigröße:</strong> 500 MB</li>
+                            <li><strong>Formate:</strong> Präsentationen, MP3, MP4, MOV</li>
+                            <li><strong>Dauer:</strong> Filme/Audio max. 5 Minuten, Präsentationen max. 20 Folien</li>
+                            <li><strong>Kompatibilität:</strong> Muss unter Windows lauffähig sein</li>
+                            <li><strong>Dokumentation:</strong> Beschreibung und/oder Drehbuch erforderlich</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Supported Formats -->
+                <div style="background: white; padding: 2rem; border-radius: 12px; margin-top: 2rem; text-align: center; border-top: 4px solid #667eea;">
+                    <h4 style="color: #667eea; margin-bottom: 1rem;">✅ Unterstützte Dateiformate</h4>
+                    <p style="margin: 0; color: #4b5563;">PDF • DOC/DOCX • JPG/PNG • MP3 • MP4 • MOV • PPTX</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Stats -->
+        <section class="rules-container" style="margin-top: 4rem;">
+            <h2 style="text-align: center;">Auf einen Blick</h2>
+            <div class="stats-highlight">
+                <div class="stat-highlight">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Faszinierende Themen</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Max. Gruppengröße</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="stat-number">∞</div>
+                    <div class="stat-label">Kreative Möglichkeiten</div>
+                </div>
+                <div class="stat-highlight">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Deine Ideen</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="rules-container">
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 3rem; border-radius: 16px; text-align: center; margin-top: 4rem; margin-bottom: 4rem;">
+                <h2 style="color: white; margin-bottom: 1rem;">🚀 Bist du bereit?</h2>
+                <p style="color: rgba(255,255,255,0.95); margin-bottom: 1.5rem; font-size: 1.1rem;">Wähle ein Thema, sammle dein Team und erschaffe etwas Großartiges für Menschenrechte!</p>
+                <a href="rights.html" style="display: inline-block; background: white; color: #667eea; padding: 1rem 2rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">Mehr über Menschenrechte erfahren</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- AI Notice -->
+    <section class="ai-notice">
+        <div class="container">
+            <p><small>Diese Website wurde als Schulprojekt mit Unterstützung digitaler Werkzeuge erstellt. KI-Tools wurden zur Strukturierung und visuellen Gestaltung verwendet.</small></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über uns</h3>
+                    <p>Eine Website zur Aufklärung über Menschenrechte für Schulen und Lernende.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rights.html">Rechte</a></li>
+                        <li><a href="challenges.html">Herausforderungen</a></li>
+                        <li><a href="rules.html">Spielregeln</a></li>
+                        <li><a href="action.html">Handeln</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ressourcen</h3>
+                    <ul>
+                        <li><a href="about.html">Über das Projekt</a></li>
+                        <li><a href="sources.html">Quellen</a></li>
+                        <li><a href="https://www.un.org/en/universal-declaration-human-rights/" target="_blank">UN-Erklärung</a></li>
+                        <li><a href="https://www.amnesty.org/" target="_blank">Amnesty International</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Menschenrechte Schulprojekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+
+        // Add animation to cards on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.rule-card, .theme-card, .requirement-box').forEach(card => {
+            observer.observe(card);
+        });
+
+        // Active nav link
+        const currentPage = window.location.pathname;
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            if (link.getAttribute('href') === 'rules.html' || currentPage.includes('rules')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

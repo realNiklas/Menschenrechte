@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Projekt: Hier bin ich Mensch – hier darf ich's sein!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes textGlow {
+            0% { opacity: 0; transform: translateX(-20px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .counter {
+            animation: countUp 1s ease-out forwards;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .animated-text {
+            animation: textGlow 0.8s ease-out forwards;
+        }
+
+        .stat-number {
+            animation: countUp 1.5s ease-out forwards !important;
+        }
+
+        .theme-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .theme-hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .theme-hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+        }
+
+        .content-section {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+
+        .concept-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .example-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+        }
+
+        .example-box h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .freedom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .freedom-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .freedom-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .freedom-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .chart-container {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: relative;
+            height: 400px;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .action-points {
+            background: #f0f4ff;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .action-points h3 {
+            color: #667eea;
+            margin-bottom: 1.5rem;
+        }
+
+        .action-list {
+            list-style: none;
+        }
+
+        .action-list li {
+            padding: 1rem;
+            margin: 0.5rem 0;
+            background: white;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            padding-left: 1.5rem;
+        }
+
+        .action-list li::before {
+            content: "→";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .theme-hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .chart-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="theme-hero">
+        <div class="container">
+            <h1>🌟 Thema 3-1</h1>
+            <h2 style="color: rgba(255,255,255,0.95); font-size: 1.8rem; margin-bottom: 1rem;">„Hier bin ich Mensch – hier darf ich's sein!"</h2>
+            <p>Jeder Mensch ist einzigartig. Die Menschenrechte geben dir die Möglichkeit, dich selbst zu entfalten.</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Core Concept -->
+        <section class="content-section">
+            <div class="concept-card">
+                <h3>💡 Kernidee</h3>
+                <p>Dieses Thema behandelt die Grundlagen der menschlichen Würde und persönlichen Entfaltung. Es geht darum, dass jede Person das Recht hat, ihre Individualität auszudrücken, ihre Potenziale zu entwickeln und in Freiheit zu leben. In Europa haben wir das Privileg, in Gesellschaften zu leben, die diese Freiheiten schützen – aber nicht überall auf der Welt ist das selbstverständlich.</p>
+            </div>
+
+            <div class="concept-card">
+                <h3>🎯 Deine Aufgabe</h3>
+                <p>Zeige, was unsere Freiheit in Europa ausmacht. Du kannst:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8;">
+                    <li>👤 Deine eigene Identität erforschen und darstellen</li>
+                    <li>🌍 Vergleiche zwischen europäischen und globalen Perspektiven ziehen</li>
+                    <li>🎨 Kreativ zeigen, wie Freiheit für dich persönlich aussieht</li>
+                    <li>📊 Statistiken und Fakten zu Menschenrechtsschutz verwenden</li>
+                    <li>💬 Interviews oder Meinungen von Personen mit unterschiedlichem Hintergrund einholen</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Freedoms in Europe -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🏛️ Grundlegende Freiheiten in Europa</h2>
+            
+            <div class="freedom-grid">
+                <div class="freedom-item">
+                    <div class="freedom-icon">💭</div>
+                    <h4>Gedankenfreiheit</h4>
+                    <p>Du darfst denken, was du möchtest, ohne Verfolgung oder Bestrafung.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🗣️</div>
+                    <h4>Meinungsfreiheit</h4>
+                    <p>Du kannst deine Meinung frei äußern und verbreiten.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">⛪</div>
+                    <h4>Religionsfreiheit</h4>
+                    <p>Du wählst deinen Glauben selbst, ohne Druck von außen.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🤝</div>
+                    <h4>Versammlungsfreiheit</h4>
+                    <p>Du kannst dich mit anderen treffen und organisieren.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🎓</div>
+                    <h4>Bildung</h4>
+                    <p>Du hast Zugang zu Bildung und persönlicher Entwicklung.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🏠</div>
+                    <h4>Privatsphäre</h4>
+                    <p>Dein Privatleben ist geschützt und respektiert.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contextual Comparison -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🌏 Europa vs. Globale Perspektive</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>Europa 🇪🇺</th>
+                        <th>Globale Realität 🌍</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Meinungsfreiheit</strong></td>
+                        <td>Geschützt durch Gesetze, Medienfreiheit garantiert</td>
+                        <td>In vielen Ländern zensiert, Journalisten in Gefahr</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bildungszugang</strong></td>
+                        <td>Kostenlose oder günstige Schulbildung für alle</td>
+                        <td>258 Millionen Kinder sind nicht zur Schule angemeldet</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Religionsfreiheit</strong></td>
+                        <td>Frei wählbar, respektiert und geschützt</td>
+                        <td>Verfolgung von Minderheiten in vielen Regionen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arbeitsrechte</strong></td>
+                        <td>Tarifverträge, Arbeiterschutz, Mindestlohn</td>
+                        <td>Ausbeutung, Kinderarbeit, unsichere Bedingungen</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geschlechterrechte</strong></td>
+                        <td>Gleichstellung im Recht, Chancengleichheit</td>
+                        <td>Diskriminierung, Zwangsehen, Gewalt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Inspiring Quote -->
+        <section class="content-section">
+            <div class="quote-section">
+                "Die Menschenrechte sind nicht verhandelbar. Sie sind der Boden, auf dem eine freie Gesellschaft aufgebaut ist."
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">— Grundprinzip der Europäischen Menschenrechtskonvention</p>
+            </div>
+        </section>
+
+        <!-- Concrete Examples -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📌 Konkrete Beispiele aus der Realität</h2>
+            
+            <div class="example-box">
+                <h4>👩‍🎓 Beispiel 1: Bildungschancen</h4>
+                <p><strong>In Europa:</strong> Du kannst jede Schulform wählen, verschiedene Berufe anstreben, unabhängig von deinem Geschlecht oder deiner sozialen Herkunft.</p>
+                <p><strong>Global:</strong> In Jemen oder Niger gehen nur 30-40% der Mädchen zur Schule. Ihre Chancen sind massiv eingeschränkt.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Quelle:</strong> UNESCO World Education Report 2024</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎨 Beispiel 2: Künstlerische Freiheit</h4>
+                <p><strong>In Europa:</strong> Künstler können provokativ, politisch, kritisch oder avantgardistisch arbeiten – ohne Zensur oder Verfolgung.</p>
+                <p><strong>Global:</strong> In China, Iran oder Russland werden Künstler überwacht, Werke zensiert, teilweise ins Gefängnis gesperrt.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏳️‍🌈 Beispiel 3: Identität & Sexuelle Orientierung</h4>
+                <p><strong>In Europa:</strong> Homosexuelle und LGBTQ+ Personen haben volle Rechte, können heiraten, arbeiten, ohne Diskriminierung leben.</p>
+                <p><strong>Global:</strong> In 64 Ländern ist Homosexualität illegal. In einigen sogar mit Todesstrafe geahndet.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Quelle:</strong> ILGA World Report on Sexual Orientation Laws</p>
+            </div>
+        </section>
+
+        <!-- Statistics -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📊 Wichtige Statistiken</h2>
+            
+            <div class="statistics">
+                <div class="stat-box">
+                    <div class="stat-number">1.1 Mrd.</div>
+                    <div class="stat-label">Kinder weltweit betroffem von Armut (ohne sichere Freiheiten)</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">258 Mio.</div>
+                    <div class="stat-label">Kinder nicht in der Schule angemeldet</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">130 Länder</div>
+                    <div class="stat-label">Mit Gesetzen gegen LGBTQ+ Menschen</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">50%+</div>
+                    <div class="stat-label">Bevölkerung ohne freie Meinungsäußerung</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Action Points -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">💪 Was du tun kannst</h2>
+            
+            <div class="action-points">
+                <h3>Ideen für deine Arbeit:</h3>
+                <ul class="action-list">
+                    <li><strong>Portfolio-Projekt:</strong> Sammle Fotos/Videos von Orten in Europa, wo du dich frei ausdrückst</li>
+                    <li><strong>Interview-Serie:</strong> Befrage Menschen aus verschiedenen Kulturen über ihre Freiheiten</li>
+                    <li><strong>Vergleichende Grafik:</strong> Erstelle Visualisierungen von Freiheitsindizes weltweit</li>
+                    <li><strong>Kunstwerk:</strong> Male, zeichne oder skulpturiere deine persönliche Freiheit</li>
+                    <li><strong>Podcast/Video:</strong> Diskutiere mit Freunden, was Freiheit bedeutet</li>
+                    <li><strong>Recherche-Arbeit:</strong> Analyse von Verfassungen und Menschenrechtsgesetzen in verschiedenen Ländern</li>
+                    <li><strong>Persönliche Reflexion:</strong> Schreibe einen Essay über deine Erfahrungen und Privilegien</li>
+                    <li><strong>Aktivismus-Plan:</strong> Entwickle ein Projekt, um die Freiheiten von marginalisierten Gruppen zu schützen</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Resources Chart -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📚 Wichtige Ressourcen</h2>
+            
+            <div class="concept-card">
+                <h3>🔗 Weiterführende Links</h3>
+                <ul style="list-style-position: inside; line-height: 2;">
+                    <li><a href="https://www.un.org/en/universal-declaration-human-rights/" target="_blank" style="color: #667eea; text-decoration: underline;">UN Allgemeine Erklärung der Menschenrechte</a></li>
+                    <li><a href="https://www.echr.coe.int/" target="_blank" style="color: #667eea; text-decoration: underline;">Europäische Menschenrechtskonvention</a></li>
+                    <li><a href="https://www.amnesty.org/" target="_blank" style="color: #667eea; text-decoration: underline;">Amnesty International</a></li>
+                    <li><a href="https://www.freedomhouse.org/" target="_blank" style="color: #667eea; text-decoration: underline;">Freedom House – Globale Freiheitsindizes</a></li>
+                    <li><a href="https://www.humanrights.gov.au/" target="_blank" style="color: #667eea; text-decoration: underline;">Australische Menschenrechtskommission</a></li>
+                    <li><a href="https://www.unesco.org/" target="_blank" style="color: #667eea; text-decoration: underline;">UNESCO – Bildung & Kultur</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="content-section">
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1rem;">🌈 Deine Perspektive zählt</h3>
+                <p>Du lebst in einem Europa mit großen Freiheiten. Nutze sie, um anderen die Augen zu öffnen. Zeige, was es bedeutet, sich selbst zu sein – und kämpfe für diejenigen, denen diese Freiheit noch fehlt.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über uns</h3>
+                    <p>Eine Website zur Aufklärung über Menschenrechte für Schulen und Lernende.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="theme-3-1.html">Thema 3-1</a></li>
+                        <li><a href="theme-3-2.html">Thema 3-2</a></li>
+                        <li><a href="theme-3-3.html">Thema 3-3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Ressourcen</h3>
+                    <ul>
+                        <li><a href="https://www.un.org/en/universal-declaration-human-rights/" target="_blank">UN Erklärung</a></li>
+                        <li><a href="https://www.amnesty.org/" target="_blank">Amnesty International</a></li>
+                        <li><a href="https://www.echr.coe.int/" target="_blank">Europ. Gerichtshof</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Menschenrechte Schulprojekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

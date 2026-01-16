@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Projekt: Hier bin ich Mensch – hier darf ich's sein!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        @keyframes textGlow {
+            0% { opacity: 0; transform: translateX(-20px); }
+            100% { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        .theme-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .theme-hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .theme-hero p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.1rem;
+            animation: slideInUp 0.8s ease-out 0.2s both;
+        }
+
+        .content-section {
+            max-width: 1000px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+            animation: slideInUp 0.6s ease-out;
+        }
+
+        .concept-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .concept-card h3 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            animation: textGlow 0.8s ease-out;
+        }
+
+        .freedom-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .freedom-item {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .freedom-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .freedom-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+            animation: textGlow 0.6s ease-out;
+        }
+
+        .comparison-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+        }
+
+        .comparison-table tr:hover {
+            background: #f9fafb;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 1.3rem;
+            font-style: italic;
+            line-height: 1.8;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .example-box {
+            background: #f0f4ff;
+            border-left: 4px solid #667eea;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .example-box h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            animation: textGlow 0.6s ease-out;
+        }
+
+        .statistics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .stat-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            animation: countUp 2s ease-out forwards;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            animation: textGlow 0.8s ease-out;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #667eea;
+            animation: slideInUp 0.8s ease-out;
+        }
+
+        .project-card h4 {
+            color: #667eea;
+            margin-bottom: 1rem;
+            animation: textGlow 0.6s ease-out;
+        }
+
+        .project-description {
+            animation: textGlow 0.8s ease-out 0.2s both;
+        }
+
+        h2 {
+            animation: textGlow 0.8s ease-out;
+        }
+
+        @media (max-width: 768px) {
+            .theme-hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="theme-hero">
+        <div class="container">
+            <h1>🌟 Mein Projekt: Thema 3-1</h1>
+            <h2 style="color: rgba(255,255,255,0.95); font-size: 1.8rem; margin-bottom: 1rem;">„Hier bin ich Mensch – hier darf ich's sein!"</h2>
+            <p>Meine Reise zur Entdeckung von Freiheit und Individualität in Europa</p>
+        </div>
+    </section>
+
+    <main>
+        <!-- Core Concept -->
+        <section class="content-section">
+            <div class="concept-card">
+                <h3>💡 Warum ich dieses Thema gewählt habe</h3>
+                <p class="animated-text">Ich lebe in einem Europa mit außergewöhnlichen Freiheiten – und ich habe lange nicht verstanden, wie privilegiert das ist. Dieses Projekt ist meine Erkundung dessen, was es bedeutet, frei zu sein. Ich werde untersuchen, wie ich mich selbst entfalten kann, während Menschen in anderen Teilen der Welt diese Freiheiten nicht haben.</p>
+            </div>
+
+            <div class="concept-card">
+                <h3>🎯 Mein Ansatz</h3>
+                <p class="animated-text">Ich habe mich entschieden, meine persönlichen Freiheiten zu dokumentieren und mit globalen Realitäten zu vergleichen. Ich werde:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8; animation: slideInUp 0.8s ease-out 0.3s both;">
+                    <li>✍️ Meine eigene Identität erforschen und darstellen</li>
+                    <li>🌍 Interviews mit Menschen aus verschiedenen Ländern führen</li>
+                    <li>📊 Statistiken und Daten visualisieren</li>
+                    <li>🎨 Kunstwerk oder Video erstellen, das meine Freiheit zeigt</li>
+                    <li>💬 Meine Erkenntnisse und Überraschungen teilen</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Key Freedoms in Europe -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🏛️ Die Freiheiten, die ich nutze</h2>
+            
+            <div class="freedom-grid">
+                <div class="freedom-item">
+                    <div class="freedom-icon">💭</div>
+                    <h4>Gedankenfreiheit</h4>
+                    <p>Ich denke, was ich möchte. Niemand kann meine Gedanken kontrollieren.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🗣️</div>
+                    <h4>Meinungsfreiheit</h4>
+                    <p>Ich kann meine Meinung aussprechen – auch wenn sie kontrovers ist.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">⛪</div>
+                    <h4>Religionsfreiheit</h4>
+                    <p>Ich wähle meinen Glauben selbst – oder entscheide mich für keinen.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🤝</div>
+                    <h4>Versammlungsfreiheit</h4>
+                    <p>Ich kann mich mit anderen treffen und organisieren – ohne Angst.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🎓</div>
+                    <h4>Bildung</h4>
+                    <p>Ich habe Zugang zu Bildung und kann meine Fähigkeiten entwickeln.</p>
+                </div>
+
+                <div class="freedom-item">
+                    <div class="freedom-icon">🏠</div>
+                    <h4>Privatsphäre</h4>
+                    <p>Mein Privatleben ist geschützt und respektiert.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- My Research -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🔍 Meine Forschung: Europa vs. Globale Realität</h2>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Aspekt</th>
+                        <th>Meine Realität (Europa) 🇪🇺</th>
+                        <th>Globale Herausforderung 🌍</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Meinungsfreiheit</strong></td>
+                        <td>Ich kann frei sprechen, schreiben, bloggen</td>
+                        <td>Journalisten weltweit werden eingesperrt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bildung</strong></td>
+                        <td>Kostenlose Schulbildung für mich</td>
+                        <td>258 Millionen Kinder gehen nicht zur Schule</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Religionsfreiheit</strong></td>
+                        <td>Ich kann glauben, was ich möchte</td>
+                        <td>Religiöse Minderheiten werden verfolgt</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Arbeitsrechte</strong></td>
+                        <td>Sichere Arbeitsbedingungen sind garantiert</td>
+                        <td>160 Millionen Kinder müssen arbeiten</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Geschlechterrechte</strong></td>
+                        <td>Ich habe gleiche Chancen unabhängig vom Geschlecht</td>
+                        <td>Frauen erleben Diskriminierung und Gewalt</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Quote -->
+        <section class="content-section">
+            <div class="quote-section">
+                "Ich bin frei – und ich verstehe jetzt, wie selten und wertvoll diese Freiheit ist."
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">— Aus meinem Tagebuch während dieses Projekts</p>
+            </div>
+        </section>
+
+        <!-- My Case Studies -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📌 Meine Fallstudien & Erkenntnisse</h2>
+            
+            <div class="example-box">
+                <h4>👩‍🎓 Fallstudie 1: Meine Bildungschanc​en</h4>
+                <p class="animated-text"><strong>Meine Situation:</strong> Ich kann jede Schulform wählen, verschiedene Berufe anstreben – unabhängig von meinem Hintergrund.</p>
+                <p class="animated-text"><strong>Global:</strong> In Ländern wie Jemen gehen nur 30% der Mädchen zur Schule. Ihre Chancen sind massiv eingeschränkt.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Meine Erkenntnis:</strong> Bildung ist nicht überall selbstverständlich.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🎨 Fallstudie 2: Meine künstlerische Freiheit</h4>
+                <p class="animated-text"><strong>Meine Situation:</strong> Ich kann schreiben, zeichnen, malen – ohne Zensur oder Angst.</p>
+                <p class="animated-text"><strong>Global:</strong> Künstler in China, Iran, Russland werden überwacht und verfolgt.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Meine Erkenntnis:</strong> Kreativität ist nicht überall willkommen.</p>
+            </div>
+
+            <div class="example-box">
+                <h4>🏳️‍🌈 Fallstudie 3: Meine Identität</h4>
+                <p class="animated-text"><strong>Meine Situation:</strong> Ich kann sein, wer ich bin – ohne Angst vor Verfolgung.</p>
+                <p class="animated-text"><strong>Global:</strong> In 64 Ländern ist Homosexualität illegal. In einigen sogar mit Todesstrafe.</p>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #666;"><strong>Meine Erkenntnis:</strong> Meine Freiheit ist ein Privileg, das viele nicht haben.</p>
+            </div>
+        </section>
+
+        <!-- My Statistics -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📊 Die Zahlen hinter meiner Recherche</h2>
+            
+            <div class="statistics">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="1100000000">0</div>
+                    <div class="stat-label">Kinder weltweit ohne sichere Freiheiten</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="258000000">0</div>
+                    <div class="stat-label">Kinder nicht in der Schule</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="130">0</div>
+                    <div class="stat-label">Länder mit Gesetzen gegen LGBTQ+</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="50">0</div>
+                    <div class="stat-label">% ohne Meinungsfreiheit</div>
+                </div>
+            </div>
+        </section>
+
+    
+
+        <!-- Resources -->
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📚 Quellen, die ich nutze</h2>
+            
+            <div class="concept-card">
+                <h3>🔗 Meine Recherchequellen</h3>
+                <ul style="list-style-position: inside; line-height: 2; animation: slideInUp 0.8s ease-out 0.3s both;">
+                    <li><a href="https://www.un.org/en/universal-declaration-human-rights/" target="_blank" style="color: #667eea; text-decoration: underline;">UN Allgemeine Erklärung der Menschenrechte</a></li>
+                    <li><a href="https://www.echr.coe.int/" target="_blank" style="color: #667eea; text-decoration: underline;">Europäische Menschenrechtskonvention</a></li>
+                    <li><a href="https://www.amnesty.org/" target="_blank" style="color: #667eea; text-decoration: underline;">Amnesty International</a></li>
+                    <li><a href="https://www.freedomhouse.org/" target="_blank" style="color: #667eea; text-decoration: underline;">Freedom House – Globale Freiheitsindizes</a></li>
+                    <li><a href="https://www.unesco.org/" target="_blank" style="color: #667eea; text-decoration: underline;">UNESCO – Bildungsstatistiken</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Final Message -->
+        <section class="content-section">
+            <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; animation: slideInUp 0.8s ease-out 0.4s both;">
+                <h3 style="color: white; margin-bottom: 1rem; animation: textGlow 0.6s ease-out;">🌈 Meine Botschaft</h3>
+                <p class="animated-text">Ich bin frei – und ich weiß jetzt, wie kostbar das ist. Dieses Projekt hat mir gezeigt, dass Freiheit nicht überall selbstverständlich ist. Ich möchte andere inspirieren, ihre Freiheiten zu nutzen und gleichzeitig denen zu helfen, die sie noch nicht haben.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über dieses Projekt</h3>
+                    <p>Meine persönliche Erkundung von Freiheit und Menschenrechten in Europa.</p>
+                </div>
+                <div>
+                    <h3>Verwandte Themen</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="theme-3-2.html">Thema 3-2</a></li>
+                        <li><a href="theme-3-3.html">Thema 3-3</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Wichtige Links</h3>
+                    <ul>
+                        <li><a href="https://www.un.org/en/universal-declaration-human-rights/" target="_blank">UN Erklärung</a></li>
+                        <li><a href="https://www.amnesty.org/" target="_blank">Amnesty International</a></li>
+                        <li><a href="https://www.freedomhouse.org/" target="_blank">Freedom House</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Mein Menschenrechte-Projekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Animate counters
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 50);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString('de-DE');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString('de-DE');
+                }
+            }, 50);
+        }
+
+        // Start animations when page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                animateCounter(counter);
+            });
+        });
+
+        // Intersection Observer für weitere Animationen
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.project-card, .freedom-item, .example-box').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

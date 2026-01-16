@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein Projekt: Gewalt ist keine Option!</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @keyframes slideInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes textGlow { 0% { opacity: 0; transform: translateX(-20px); } 100% { opacity: 1; transform: translateX(0); } }
+        @keyframes countUp { from { opacity: 0; transform: scale(0.8); } to { opacity: 1; transform: scale(1); } }
+
+        .theme-hero { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .theme-hero h1 { color: white; font-size: 2.5rem; margin-bottom: 1rem; animation: slideInUp 0.8s ease-out; }
+        .theme-hero p { color: rgba(255,255,255,0.9); font-size: 1.1rem; animation: slideInUp 0.8s ease-out 0.2s both; }
+        .content-section { max-width: 1000px; margin: 3rem auto; padding: 0 2rem; }
+        .concept-card { background: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-left: 4px solid #dc2626; animation: slideInUp 0.8s ease-out; }
+        .concept-card h3 { color: #dc2626; margin-bottom: 1rem; animation: textGlow 0.8s ease-out; }
+        .animated-text { animation: textGlow 0.8s ease-out 0.2s both; }
+
+        .violence-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .violence-card { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1); animation: slideInUp 0.8s ease-out; transition: all 0.3s ease; border-top: 4px solid #dc2626; }
+        .violence-card:hover { transform: translateY(-5px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+        .violence-icon { font-size: 2.5rem; margin-bottom: 1rem; }
+        .violence-card h4 { color: #dc2626; margin-bottom: 0.5rem; animation: textGlow 0.6s ease-out; }
+
+        .example-box { background: #fee2e2; border-left: 4px solid #dc2626; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; animation: slideInUp 0.8s ease-out; }
+        .example-box h4 { color: #dc2626; margin-bottom: 0.5rem; animation: textGlow 0.6s ease-out; }
+
+        .solution-box { background: #dbeafe; border-left: 4px solid #0284c7; padding: 1.5rem; margin: 1.5rem 0; border-radius: 8px; animation: slideInUp 0.8s ease-out; }
+        .solution-box h4 { color: #0284c7; margin-bottom: 0.5rem; animation: textGlow 0.6s ease-out; }
+
+        .statistics { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+        .stat-box { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; animation: slideInUp 0.8s ease-out; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; animation: countUp 2s ease-out forwards; }
+
+        .project-card { background: white; border-radius: 12px; padding: 2rem; margin: 1.5rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-top: 4px solid #dc2626; animation: slideInUp 0.8s ease-out; }
+        .project-card h4 { color: #dc2626; margin-bottom: 1rem; animation: textGlow 0.6s ease-out; }
+
+        .step { display: flex; margin: 1.5rem 0; gap: 1rem; animation: slideInUp 0.8s ease-out; }
+        .step-number { background: #dc2626; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0; }
+        .step-content h4 { color: #dc2626; margin-bottom: 0.5rem; margin-top: 0; animation: textGlow 0.6s ease-out; }
+
+        h2 { animation: textGlow 0.8s ease-out; }
+
+        .quote-section { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 3rem 2rem; border-radius: 12px; margin: 2rem 0; text-align: center; font-size: 1.3rem; font-style: italic; animation: slideInUp 0.8s ease-out; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="theme-hero">
+        <div class="container">
+            <h1>✊ Mein Projekt: Thema 3-3</h1>
+            <h2 style="color: rgba(255,255,255,0.95); font-size: 1.8rem; margin-bottom: 1rem;">Gewalt ist keine Option!</h2>
+            <p>Mein persönlicher Kampf gegen Gewalt in meinem Umfeld</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="content-section">
+            <div class="concept-card">
+                <h3>💡 Warum ich dieses Thema gewählt habe</h3>
+                <p class="animated-text">Ich habe Gewalt um mich herum gesehen – in der Schule, online, manchmal sogar zu Hause. Ich wusste, dass ich nicht nur zusehen kann. Dieses Projekt ist mein Versprechen: Ich werde aktiv gegen Gewalt kämpfen, Opfer unterstützen und Lösungen entwickeln, die funktionieren.</p>
+            </div>
+
+            <div class="concept-card">
+                <h3>🎯 Mein Ansatz</h3>
+                <p class="animated-text">Ich habe mich entschieden, drei Dinge zu tun:</p>
+                <ul style="margin: 1rem 0; padding-left: 2rem; line-height: 1.8; animation: slideInUp 0.8s ease-out 0.3s both;">
+                    <li>🔍 Gewaltformen in meiner Schule erkennen und dokumentieren</li>
+                    <li>💪 Ein Anti-Mobbing-Programm entwickeln</li>
+                    <li>🤝 Unterstützung für Opfer schaffen</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🚫 Die Gewaltformen, die ich erkannt habe</h2>
+            
+            <div class="violence-types">
+                <div class="violence-card">
+                    <div class="violence-icon">👊</div>
+                    <h4>Körperliche Gewalt</h4>
+                    <p>Ich habe Fälle von Prügel und Misshandlung in meiner Schule gesehen.</p>
+                </div>
+
+                <div class="violence-card">
+                    <div class="violence-icon">💔</div>
+                    <h4>Mobbing</h4>
+                    <p>Systematische Beleidigungen und Ausgrenzung erlebe ich täglich.</p>
+                </div>
+
+                <div class="violence-card">
+                    <div class="violence-icon">📱</div>
+                    <h4>Cybermobbing</h4>
+                    <p>Online-Gewalt ist überall – Hassbotschaften, Drohungen, Bloßstellung.</p>
+                </div>
+
+                <div class="violence-card">
+                    <div class="violence-icon">⚡</div>
+                    <h4>Sexuelle Belästigung</h4>
+                    <p>Unwillkommene Berührungen, Kommentare – viele trauen sich nicht zu sprechen.</p>
+                </div>
+
+                <div class="violence-card">
+                    <div class="violence-icon">👨‍👩‍👧</div>
+                    <h4>Häusliche Gewalt</h4>
+                    <p>Ich kenne Freunde, deren Familien von Missbrauch betroffen sind.</p>
+                </div>
+
+                <div class="violence-card">
+                    <div class="violence-icon">🔗</div>
+                    <h4>Strukturelle Gewalt</h4>
+                    <p>Diskriminierung, Ausgrenzung – unsichtbare aber wirksame Gewalt.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div class="quote-section">
+                "Ich bin nicht mehr still. Ich sehe Gewalt, und ich handele."
+                <p style="font-size: 0.9rem; margin-top: 1rem; opacity: 0.8;">— Mein Versprechen an mich selbst</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📌 Meine Forschung: Problem & Meine Lösung</h2>
+            
+            <div class="example-box">
+                <h4>😢 Das Problem: Mobbing in meiner Schule</h4>
+                <p class="animated-text"><strong>Was ich beobachtet habe:</strong> Ein Schüler wird aufgrund seines Aussehens gemobbt. Niemand hilft. Lehrer sehen weg.</p>
+                <p class="animated-text"><strong>Die Folgen:</strong> Der Schüler ist deprimiert, kommt nicht mehr zur Schule.</p>
+            </div>
+
+            <div class="solution-box">
+                <h4>✅ Meine Lösung: Ein Peer-Support-Team</h4>
+                <p><strong>Mein Plan:</strong></p>
+                <ul style="margin: 1rem 0; padding-left: 2rem;">
+                    <li>Ich werde andere Schüler trainieren, Streitschlichter zu werden</li>
+                    <li>Wir schaffen einen "Vertrauensort" in der Schule</li>
+                    <li>Wir organisieren Workshops zu Empathie und Konfliktbewältigung</li>
+                    <li>Wir sprechen öffentlich gegen Mobbing</li>
+                </ul>
+                <p style="margin-top: 1rem; font-size: 0.9rem; color: #0284c7;"><strong>Erfolg:</strong> Die Mobbingfälle könnten um 40-60% sinken</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">📊 Die Statistiken, die mich motivieren</h2>
+            
+            <div class="statistics">
+                <div class="stat-box">
+                    <div class="stat-number" data-target="1000000000">0</div>
+                    <div class="stat-label">Kinder erleben jährlich Gewalt</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="252000000">0</div>
+                    <div class="stat-label">Schüler sind Opfer von Mobbing</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="1">0 von 3</div>
+                    <div class="stat-label">Frauen erleben körperliche Gewalt</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number" data-target="89">0</div>
+                    <div class="stat-label">% Cybermobbing-Opfer sind unter 30</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">💪 Meine Interventions-Strategie</h2>
+            
+            <div style="background: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="color: #dc2626; margin-bottom: 1.5rem;">Wenn ich Gewalt sehe – Das mache ich:</h3>
+
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>Beobachten & erkennen</h4>
+                        <p>Ich schaue nicht weg. Ich erkenne alle Formen von Gewalt.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>Ruhig intervieren</h4>
+                        <p>Ich stelle mich dem Täter ruhig entgegen: "Das ist nicht okay."</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>Das Opfer unterstützen</h4>
+                        <p>Ich biete Hilfe an: Zuhören, Validierung, einen sicheren Ort.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h4>Professionelle Hilfe holen</h4>
+                        <p>Ich kontaktiere einen Erwachsenen oder eine Hilfshotline.</p>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h4>Systeme verändern</h4>
+                        <p>Ich arbeite an langfristigen Lösungen – nicht nur Erste Hilfe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🎯 Meine konkreten Projekte</h2>
+            
+            <div class="project-card">
+                <h4>📽️ Dokumentarfilm: "Stille Opfer"</h4>
+                <p><strong>Mein Plan:</strong> Ein Film mit anonymisierten Interviews von Mobbing-Opfern. Ich zeige die psychologischen Folgen und gebe Hilferessourcen.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>🎓 Anti-Mobbing-Workshop</h4>
+                <p><strong>Mein Plan:</strong> Ich entwickle einen 4-wöchigen Workshop für meine Schule zu Empathie, Konfliktbewältigung und Respekt.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📊 Statistik-Report</h4>
+                <p><strong>Mein Plan:</strong> Ich führe eine anonyme Umfrage durch, um Gewalt in meiner Schule zu dokumentieren. Die Ergebnisse präsentiere ich der Schulleitung.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>🤝 Peer-Mediation-Programm</h4>
+                <p><strong>Mein Plan:</strong> Ich werde selbst Streitschlichter und trainiere andere. Wir schaffen einen offiziellen "Mediation-Service" in der Schule.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📱 Kampagne: #NoViolence</h4>
+                <p><strong>Mein Plan:</strong> Ich starte eine Social-Media-Kampagne mit Statements gegen Gewalt, geteilt von Schülern und Lehrern.</p>
+            </div>
+
+            <div class="project-card">
+                <h4>📞 Ressourcen-Guide</h4>
+                <p><strong>Mein Plan:</strong> Ich erstelle einen Leitfaden mit Hotlines, Beratungsstellen und Tipps für Gewaltopfer und Zeugen.</p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2 style="color: #111827; margin-bottom: 1.5rem;">🆘 Hilfe, die ich vermittle</h2>
+            
+            <div style="background: white; border-radius: 12px; padding: 2rem; margin: 2rem 0; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                <h3 style="color: #dc2626; margin-bottom: 1rem;">Wichtige Hotlines & Ressourcen:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;"><strong>🇩🇪 Telefonseelsorge:</strong> 0800 111 0 111 (kostenlos, 24/7)</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;"><strong>👶 Kinderschutzbund:</strong> <a href="https://www.dksb.de/" target="_blank" style="color: #0284c7;">dksb.de</a></li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;"><strong>👩 Frauenhotline:</strong> Spezialisiert auf Gewalt gegen Frauen</li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #e5e7eb;"><strong>🌍 Amnesty International:</strong> <a href="https://www.amnesty.org/" target="_blank" style="color: #0284c7;">amnesty.org</a></li>
+                    <li style="padding: 0.5rem 0;"><strong>⚠️ Notfall:</strong> Polizei 110 (sofortige Gefahr)</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <div style="background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); color: white; padding: 2rem; border-radius: 12px; text-align: center; animation: slideInUp 0.8s ease-out 0.4s both;">
+                <h3 style="color: white; margin-bottom: 1rem;">✊ Meine Botschaft</h3>
+                <p class="animated-text">Gewalt ist nicht unvermeidbar. Ich kann etwas tun. Du kannst etwas tun. Wir können gemeinsam eine Welt ohne Gewalt schaffen – beginnend bei uns selbst, in unseren Schulen, unseren Familien. Dieses Projekt ist mein Versprechen: Ich höre nicht auf zu kämpfen.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über dieses Projekt</h3>
+                    <p>Mein persönlicher Kampf gegen Gewalt in meinem Umfeld.</p>
+                </div>
+                <div>
+                    <h3>Verwandte Themen</h3>
+                    <ul>
+                        <li><a href="theme-3-1.html">Thema 3-1</a></li>
+                        <li><a href="theme-3-2.html">Thema 3-2</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Hilfe</h3>
+                    <ul>
+                        <li><a href="https://www.dksb.de/" target="_blank">Kinderschutzbund</a></li>
+                        <li><a href="https://www.amnesty.org/" target="_blank">Amnesty International</a></li>
+                        <li><a href="https://www.telefonseelsorge.de/" target="_blank">Telefonseelsorge</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024-2025 Mein Menschenrechte-Projekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const duration = 2000;
+            const start = 0;
+            const increment = target / (duration / 50);
+            let current = start;
+
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString('de-DE');
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString('de-DE');
+                }
+            }, 50);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.stat-number').forEach(counter => {
+                animateCounter(counter);
+            });
+        });
+    </script>
+</body>
+</html>

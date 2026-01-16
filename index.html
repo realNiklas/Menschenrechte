@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menschenrechte - Schulprojekt</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-content">
+                <a href="index.html" class="logo">🌍 Menschenrechte</a>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="rights.html">Rechte</a></li>
+                    <li><a href="challenges.html">Herausforderungen</a></li>
+                    <li><a href="rules.html">Spielregeln</a></li>
+                    <li><a href="action.html">Handeln</a></li>
+                    <li><a href="about.html">Über mich</a></li>
+                    <li><a href="sources.html">Quellen</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Menschenrechte für Alle</h1>
+            <p>Verstehen, Schützen, Verteidigen - Deine Stimme zählt</p>
+            <button class="cta-btn" onclick="document.querySelector('.facts').scrollIntoView({behavior: 'smooth'})">Mehr Erfahren</button>
+        </div>
+    </section>
+
+    <!-- Facts Section -->
+    <section class="facts">
+        <div class="container">
+            <h2>Wichtige Fakten</h2>
+            <div class="facts-grid">
+                <div class="fact-card">
+                    <div class="fact-number">1948</div>
+                    <p>Allgemeine Erklärung der Menschenrechte verabschiedet</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-number">30</div>
+                    <p>Artikel in der Menschenrechtserklärung</p>
+                </div>
+                <div class="fact-card">
+                    <div class="fact-number">193</div>
+                    <p>UN-Mitgliedstaaten</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Erkunde die verschiedenen Bereiche</h2>
+            <div class="cta-grid">
+                <a href="rights.html" class="cta-card">
+                    <div class="icon">⚖️</div>
+                    <h3>Deine Rechte</h3>
+                    <p>Erfahre, welche Menschenrechte es gibt</p>
+                </a>
+                <a href="challenges.html" class="cta-card">
+                    <div class="icon">⚠️</div>
+                    <h3>Herausforderungen</h3>
+                    <p>Lerne über aktuelle Probleme</p>
+                </a>
+                <a href="action.html" class="cta-card">
+                    <div class="icon">✊</div>
+                    <h3>So kannst du handeln</h3>
+                    <p>Mache den Unterschied</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meine Projekte Section -->
+    <section class="projects-section" style="background: #f9fafb; padding: 3rem 0; margin: 3rem 0;">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem;">🎯 Meine Projekte</h2>
+            <p style="text-align: center; margin-bottom: 2rem; color: #666;">Hier präsentiere ich meine persönlichen Projekte zu den Menschenrechtsthemen:</p>
+            <div class="cta-grid">
+                <a href="theme-3-1-neu.html" class="cta-card">
+                    <div class="icon">🌟</div>
+                    <h3>Thema 3-1</h3>
+                    <p>Hier bin ich Mensch – hier darf ich's sein!</p>
+                </a>
+                <a href="theme-3-2-neu.html" class="cta-card">
+                    <div class="icon">🎤</div>
+                    <h3>Thema 3-2</h3>
+                    <p>Klare Stimme – offenes Ohr</p>
+                </a>
+                <a href="theme-3-3-neu.html" class="cta-card">
+                    <div class="icon">✊</div>
+                    <h3>Thema 3-3</h3>
+                    <p>Gewalt ist keine Option!</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Notice -->
+    <section class="ai-notice">
+        <div class="container">
+            <p><small>Diese Website wurde als Schulprojekt mit Unterstützung digitaler Werkzeuge erstellt.</small></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3>Über uns</h3>
+                    <p>Eine Website zur Aufklärung über Menschenrechte für Schulen und Lernende.</p>
+                </div>
+                <div>
+                    <h3>Navigation</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="rights.html">Rechte</a></li>
+                        <li><a href="challenges.html">Herausforderungen</a></li>
+                        <li><a href="action.html">Handeln</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Weitere Info</h3>
+                    <ul>
+                        <li><a href="about.html">Über den Autor</a></li>
+                        <li><a href="sources.html">Quellenverzeichnis</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Menschenrechte Projekt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Counter Animation für die Zahlen
+        const animateCounters = () => {
+            const factCards = document.querySelectorAll('.fact-card');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && !entry.target.dataset.animated) {
+                        entry.target.dataset.animated = 'true';
+                        
+                        const numberElement = entry.target.querySelector('.fact-number');
+                        const finalNumber = parseInt(numberElement.textContent);
+                        let currentNumber = 0;
+                        
+                        // Berechne die Inkremente basierend auf der Zielzahl
+                        const increment = Math.max(1, Math.floor(finalNumber / 50));
+                        const duration = 2000; // 2 Sekunden
+                        const steps = Math.ceil(duration / 30);
+                        let step = 0;
+                        
+                        const counter = setInterval(() => {
+                            step++;
+                            currentNumber = Math.min(finalNumber, currentNumber + increment);
+                            numberElement.textContent = currentNumber;
+                            
+                            if (currentNumber >= finalNumber) {
+                                numberElement.textContent = finalNumber;
+                                clearInterval(counter);
+                            }
+                        }, 30);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            factCards.forEach(card => observer.observe(card));
+        };
+        
+        document.addEventListener('DOMContentLoaded', animateCounters);
+    </script>
+</body>
+</html>
